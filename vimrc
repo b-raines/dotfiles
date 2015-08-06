@@ -25,10 +25,11 @@ Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rking/ag.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ervandew/supertab'
+Plugin 'mkitt/tabline.vim'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,6 +49,10 @@ filetype plugin indent on    " required
 " Config
 let mapleader=","
 let g:ctrlp_split_window = 1 " <CR> = New Tab
+let g:indentLine_color_term = 238
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_color_tty_dark = 1
 set hidden
 set number
 set hlsearch
@@ -55,8 +60,17 @@ set undofile
 set undodir=~/.vim/undodir
 set splitbelow
 set splitright
+set expandtab
+set tabstop=2
+set shiftwidth=2
 syntax enable
+
+" Color scheme
 colorscheme solarized
+set background=dark
+hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
