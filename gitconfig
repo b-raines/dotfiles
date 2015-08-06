@@ -3,3 +3,7 @@
 	email = bt.raines@gmail.com
 [credential]
 	helper = osxkeychain
+[push]
+	default = matching
+[core]
+	editor = /usr/bin/vim
