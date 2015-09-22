@@ -4,6 +4,6 @@
 [credential]
 	helper = osxkeychain
 [push]
-	default = matching
+	default = upstream
 [core]
 	editor = /usr/bin/vim

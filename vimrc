@@ -23,7 +23,6 @@ Plugin 'bling/vim-airline'
 Plugin 'pangloss/vim-javascript'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'rking/ag.vim'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
@@ -48,33 +47,82 @@ filetype plugin indent on    " required
 
 " Config
 let mapleader=","
-let g:ctrlp_split_window = 1 " <CR> = New Tab
-let g:indentLine_color_term = 238
+let g:mapleader=","
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_tabpage_position = 'ac'
+let g:ctrlp_reuse_window = 'nerdtree'
+let NERDTreeQuitOnOpen = 1
+let g:indentLine_color_term = 239
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
+ca Ag Ag!
+set wildignore+=*/vendor/*,*/tmp/*,*/public/*,*/certs/*,*.so,*.swp,*.zip
+set expandtab
 set hidden
-set number
 set hlsearch
-set undofile
-set undodir=~/.vim/undodir
+set ignorecase
+set number
+set omnifunc=syntaxcomplete#Complete
+set shiftwidth=2
+set showmatch
+set smartcase
 set splitbelow
 set splitright
-set expandtab
 set tabstop=2
-set shiftwidth=2
+set textwidth=0
+set undofile
+set undodir=~/.vim/undodir
+set viminfo^=%
+set wrap linebreak nolist
+set wrapmargin=0
+set relativenumber
 syntax enable
 
 " Color scheme
-colorscheme solarized
-set background=dark
+colorscheme desert
+let g:colors_name="desert"
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
 hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
 hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.rb :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype gitcommit setlocal wrap linebreak nolist textwidth=0
+
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
