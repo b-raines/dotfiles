@@ -79,7 +79,9 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias change_rails="cd ~/Projects/change/changecollective.com"
 alias change_ios="cd ~/Projects/change/change2.ios"
-alias remigrate="production backup && development restore production && rake db:migrate db:test:prepare"
+alias migrate="rake db:migrate db:test:prepare"
+alias remigrate="staging backup && development restore staging && rake db:migrate db:test:prepare"
+alias remigrate_prod="production backup && development restore production && rake db:migrate db:test:prepare"
 
 change() {
   if [[ $@ == "ios" ]]; then

@@ -21,7 +21,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'pangloss/vim-javascript'
-Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'rking/ag.vim'
 Plugin 'othree/html5.vim'
@@ -56,6 +55,7 @@ let g:indentLine_color_term = 239
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
+let g:easytags_async = 1
 ca Ag Ag!
 set wildignore+=*/vendor/*,*/tmp/*,*/public/*,*/certs/*,*.so,*.swp,*.zip
 set expandtab
@@ -87,7 +87,8 @@ hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
 hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
 " Mappings
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeFind<CR>
+map <C-m> :NERDTreeToggle<CR>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
