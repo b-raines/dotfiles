@@ -57,6 +57,7 @@ let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
 let g:easytags_async = 1
 ca Ag Ag!
+set synmaxcol=320
 set wildignore+=*/vendor/*,*/tmp/*,*/public/*,*/certs/*,*.so,*.swp,*.zip
 set expandtab
 set hidden
@@ -109,6 +110,7 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.rb :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+au BufRead,BufNewFile Podfile set filetype=ruby
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
