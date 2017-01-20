@@ -28,6 +28,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ervandew/supertab'
 Plugin 'mkitt/tabline.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'gioele/vim-autoswap'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -111,13 +112,14 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.rb :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 au BufRead,BufNewFile Podfile set filetype=ruby
+au BufRead,BufNewFile Fastfile set filetype=ruby
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
-autocmd Filetype gitcommit setlocal wrap linebreak nolist textwidth=0
+autocmd Filetype gitcommit setlocal wrap linebreak nolist spell textwidth=72
 
 nnoremap j gj
 nnoremap k gk

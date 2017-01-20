@@ -76,6 +76,7 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias n10="ngrok http --subdomain 10percenthappier 4500"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias change_rails="cd ~/Projects/change/changecollective.com"
@@ -93,3 +94,6 @@ change() {
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# Added by GraphLab Create Launcher v3.0.1
+export PATH="/Users/brent/anaconda/bin:$PATH"
