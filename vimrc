@@ -29,6 +29,7 @@ Plugin 'ervandew/supertab'
 Plugin 'mkitt/tabline.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'gioele/vim-autoswap'
+Plugin 'keith/swift.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
