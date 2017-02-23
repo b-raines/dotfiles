@@ -77,6 +77,7 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 
 alias ngrok10="ngrok http --subdomain 10percenthappier 4500"
+alias dotfiles="cd ~/dotfiles"
 alias dotfiles_update="rcup && cd ~/dotfiles && git add . && git commit -m 'update dotfiles' && git push"
 alias zshconfig="vim ~/dotfiles/zshrc"
 alias vimconfig="vim ~/dotfiles/vimrc"
