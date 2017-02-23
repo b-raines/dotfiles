@@ -76,21 +76,15 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias n10="ngrok http --subdomain 10percenthappier 4500"
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias change_rails="cd ~/Projects/change/changecollective.com"
-alias change_ios="cd ~/Projects/change/change2.ios"
+alias ngrok10="ngrok http --subdomain 10percenthappier 4500"
+alias dotfiles_update="rcup && cd ~/dotfiles && git add . && git commit -m 'update dotfiles' && git push"
+alias zshconfig="vim ~/dotfiles/zshrc"
+alias vimconfig="vim ~/dotfiles/vimrc"
+alias projects="cd ~/Projects"
+alias change="cd ~/Projects/change"
 alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="staging backup && development restore staging && rake db:migrate db:test:prepare"
 alias remigrate_prod="production backup && development restore production && rake db:migrate db:test:prepare"
-
-change() {
-  if [[ $@ == "ios" ]]; then
-    change_ios
-  else change_rails
-  fi
-}
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export ANDROID_HOME=/usr/local/opt/android-sdk
