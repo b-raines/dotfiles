@@ -55,7 +55,8 @@ plugins=(vi-mode git ruby rails heroku brew bundler gem rvm web-search zeus zsh-
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 fpath=(/usr/local/share/zsh-completions $fpath)
-# export MANPATH="/usr/local/man:$MANPATH"
+export ANDROID_SDK_ROOT="/Users/brent/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,6 +77,7 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias avd="cd /Users/brent/Library/Android/sdk/tools && emulator -avd Nexus_5X_API_23"
 alias ngrok10="ngrok http --subdomain 10percenthappier 4500"
 alias dotfiles="cd ~/dotfiles"
 alias dotfiles_update="rcup && cd ~/dotfiles && git add . && git commit -m 'update dotfiles' && git push"
