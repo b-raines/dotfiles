@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/brent/.oh-my-zsh
+export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,10 +55,8 @@ plugins=(vi-mode git ruby rails heroku brew bundler gem rvm web-search zeus zsh-
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME"
 fpath=(/usr/local/share/zsh-completions $fpath)
-export ANDROID_SDK_ROOT="/Users/brent/Library/Android/sdk"
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,7 +77,7 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias avd="cd /Users/brent/Library/Android/sdk/tools && emulator -avd Nexus_5X_API_23"
+alias avd="cd $ANDROID_SDK_ROOT/tools &&  emulator @Nexus_5X_API_23"
 alias ngrok10="ngrok http --subdomain 10percenthappier 4500"
 alias dotfiles="cd ~/dotfiles"
 alias dotfiles_update="rcup && cd ~/dotfiles && git add . && git commit -m 'update dotfiles' && git push"
@@ -90,7 +90,6 @@ alias remigrate="staging backup && development restore staging && rake db:migrat
 alias remigrate_prod="production backup && development restore production && rake db:migrate db:test:prepare"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Added by GraphLab Create Launcher v3.0.1
 export PATH="/Users/brent/anaconda/bin:$PATH"
