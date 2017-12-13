@@ -55,7 +55,7 @@ plugins=(vi-mode git ruby rails heroku brew bundler gem rvm web-search zeus zsh-
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
@@ -88,6 +88,7 @@ alias tenpercent="cd ~/code/tenpercent"
 alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="staging backup && development restore staging && rake db:migrate db:test:prepare"
 alias remigrate_prod="production backup && development restore production && rake db:migrate db:test:prepare"
+alias ctags="`brew --prefix`/bin/ctags"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
