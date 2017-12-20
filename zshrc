@@ -89,6 +89,7 @@ alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="staging backup && development restore staging && rake db:migrate db:test:prepare"
 alias remigrate_prod="production backup && development restore production && rake db:migrate db:test:prepare"
 alias ctags="`brew --prefix`/bin/ctags"
+alias gcas="git push && gco staging && git fetch && git pull && git merge development && git push && gco master && git pull && git merge staging && git push && gco development"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
