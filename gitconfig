@@ -8,6 +8,7 @@
 	default = upstream
 [core]
 	editor = /usr/bin/vim
+	excludesfile = /Users/brent/.gitignore_global
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
