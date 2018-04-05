@@ -52,6 +52,7 @@ let g:mapleader=","
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_tabpage_position = 'ac'
 let g:ctrlp_reuse_window = 'nerdtree'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let NERDTreeQuitOnOpen = 1
 let g:indentLine_color_term = 239
 let g:indentLine_leadingSpaceChar = '·'
