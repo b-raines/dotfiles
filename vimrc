@@ -119,7 +119,7 @@ autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype gitcommit setlocal wrap linebreak nolist spell textwidth=72
 
 nnoremap j gj

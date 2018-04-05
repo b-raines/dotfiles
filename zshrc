@@ -78,7 +78,7 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 
 alias avd="cd $ANDROID_SDK_ROOT/tools &&  emulator @Nexus_5X_API_23"
-alias ngrok10="ngrok http --subdomain 10percenthappier 5000"
+alias ngrok10="ngrok http --subdomain 10percenthappier 0.0.0.0:5000"
 alias dotfiles="cd ~/dotfiles"
 alias dotfiles_update="rcup && cd ~/dotfiles && git add . && git commit -m 'update dotfiles' && git push"
 alias zshconfig="vim ~/dotfiles/zshrc"
