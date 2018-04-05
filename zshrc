@@ -77,6 +77,7 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias tunnel="ngrok http --region=us --hostname=mydev.website 5000"
 alias avd="cd $ANDROID_SDK_ROOT/tools &&  emulator @Nexus_5X_API_23"
 alias ngrok10="ngrok http --subdomain 10percenthappier 0.0.0.0:5000"
 alias dotfiles="cd ~/dotfiles"
