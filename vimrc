@@ -30,6 +30,7 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'Yggdroot/indentLine'
 " Plugin 'gioele/vim-autoswap'
 Plugin 'keith/swift.vim'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -112,6 +113,7 @@ endfunc
 
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.rb :call DeleteTrailingWS()
+autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile Fastfile set filetype=ruby
