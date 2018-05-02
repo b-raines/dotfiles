@@ -31,6 +31,10 @@ Plugin 'Yggdroot/indentLine'
 " Plugin 'gioele/vim-autoswap'
 Plugin 'keith/swift.vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'shmup/vim-sql-syntax'
+Plugin 'gregsexton/gitv'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
