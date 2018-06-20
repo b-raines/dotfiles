@@ -102,6 +102,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+map <leader>gb :Gblame<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
