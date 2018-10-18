@@ -78,7 +78,7 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 
 alias paperspace="ssh paperspace@es-dev.precisionnutrition.com"
-alias tunnel="ngrok http --region=us --hostname=mydev.website 5000"
+alias tunnel="ngrok http --region=us --hostname=mydev.website 7000"
 alias avd="cd $ANDROID_SDK_ROOT/tools &&  emulator @Nexus_5X_API_23"
 alias ngrok10="ngrok http --subdomain 10percenthappier 0.0.0.0:5000"
 alias dotfiles="cd ~/dotfiles"

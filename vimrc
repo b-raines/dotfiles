@@ -56,6 +56,7 @@ let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_tabpage_position = 'ac'
 let g:ctrlp_reuse_window = 'nerdtree'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_show_hidden = 1
 let NERDTreeQuitOnOpen = 1
 let g:indentLine_color_term = 239
 let g:indentLine_leadingSpaceChar = '·'
@@ -120,6 +121,11 @@ autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile Fastfile set filetype=ruby
+au BufRead,BufNewFile Matchfile set filetype=ruby
+au BufRead,BufNewFile Snapfile set filetype=ruby
+au BufRead,BufNewFile Gymfile set filetype=ruby
+au BufRead,BufNewFile Deliverfile set filetype=ruby
+au BufRead,BufNewFile Appfile set filetype=ruby
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
