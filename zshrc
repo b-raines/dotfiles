@@ -56,6 +56,7 @@ plugins=(vi-mode git ruby rails heroku brew bundler gem rvm web-search zeus zsh-
 # User configuration
 
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME"
+export PATH="/Users/brent/Library/Python/2.7/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
