@@ -1,7 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/brent/.oh-my-zsh
-export ANDROID_HOME=~/Library/Android/sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,8 +53,12 @@ plugins=(vi-mode git ruby rails heroku brew bundler gem rvm web-search zeus zsh-
 
 # User configuration
 
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME"
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="/Users/brent/Library/Python/2.7/bin:$PATH"
+export PATH="/Users/brent/anaconda/bin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
@@ -93,8 +95,3 @@ alias remigrate="staging backup && development restore staging && bin/rails db:m
 alias remigrate_prod="production backup && development restore production && bin/rails db:migrate db:test:prepare"
 alias ctags="`brew --prefix`/bin/ctags"
 alias gcas="git push && gco staging && git fetch && git pull && git merge development && git push && gco master && git pull && git merge staging && git push && gco development"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# Added by GraphLab Create Launcher v3.0.1
-export PATH="/Users/brent/anaconda/bin:$PATH"
