@@ -33,6 +33,8 @@ Plugin 'keith/swift.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'shmup/vim-sql-syntax'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'tpope/vim-dotenv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

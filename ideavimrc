@@ -1,0 +1,33 @@
+" Config
+let mapleader=","
+let g:mapleader=","
+
+" relative line numbers
+set rnu
+set nu
+
+" no status bar
+set laststatus=0
+
+" proper search
+set incsearch
+set ignorecase
+set smartcase
+set wrap
+set wrapscan
+set gdefault
+
+set hidden
+set hlsearch
+set ignorecase
+set number
+set showmatch
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set textwidth=0
+set undofile
+set viminfo^=%
+set wrap linebreak nolist
+set wrapmargin=0
+set relativenumber

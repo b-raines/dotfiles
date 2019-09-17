@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git ruby rails heroku brew bundler gem rvm web-search zeus zsh-syntax-highlighting)
+plugins=(vi-mode git ruby rails heroku brew bundler gem rvm web-search zeus)
 
 # User configuration
 
@@ -58,10 +58,12 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="/Users/brent/Library/Python/2.7/bin:$PATH"
 export PATH="/Users/brent/anaconda/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/usr/local/sbin:$PATH"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
