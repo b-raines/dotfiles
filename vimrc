@@ -18,7 +18,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'pangloss/vim-javascript'
 " Plugin 'xolox/vim-misc'
@@ -59,6 +59,7 @@ let g:ctrlp_tabpage_position = 'ac'
 let g:ctrlp_reuse_window = 'nerdtree'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_files=0
 let NERDTreeQuitOnOpen = 1
 let g:indentLine_color_term = 239
 let g:indentLine_leadingSpaceChar = '·'
