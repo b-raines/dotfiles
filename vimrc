@@ -35,6 +35,7 @@ Plugin 'shmup/vim-sql-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'tpope/vim-dotenv'
+Plugin 'prettier/vim-prettier'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,6 +67,8 @@ let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
 let g:easytags_async = 1
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 ca Ag Ag!
 set synmaxcol=320
 set wildignore+=*/vendor/*,*/tmp/*,*/public/*,*/certs/*,*.so,*.swp,*.zip

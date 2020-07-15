@@ -97,3 +97,5 @@ alias remigrate="staging backup && development restore_from staging && bin/rails
 alias remigrate_prod="production backup && development restore_from production && bin/rails db:migrate db:test:prepare"
 alias ctags="`brew --prefix`/bin/ctags"
 alias gcas="git push && gco staging && git fetch && git pull && git merge development && git push && gco master && git pull && git merge staging && git push && gco development"
+export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
+export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
