@@ -53,6 +53,7 @@ let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
 let g:easytags_async = 1
+let g:prettier#exec_cmd_async = 1
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 ca Ag Ag!
