@@ -86,6 +86,14 @@ hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
 hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
 hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
 " Mappings
 map <C-n> :NERDTreeFind<CR>
 map <C-m> :NERDTreeToggle<CR>
@@ -125,6 +133,9 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype gitcommit setlocal wrap linebreak nolist spell textwidth=72
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 nnoremap j gj
 nnoremap k gk
