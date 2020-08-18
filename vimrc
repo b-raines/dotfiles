@@ -1,66 +1,52 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+call plug#begin()
 
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rails'
-" Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-" Plugin 'tpope/gem-ctags'
-Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'bling/vim-airline'
-Plugin 'pangloss/vim-javascript'
-" Plugin 'xolox/vim-misc'
-Plugin 'rking/ag.vim'
-Plugin 'othree/html5.vim'
-Plugin 'hail2u/vim-css3-syntax'
-" Plugin 'ervandew/supertab'
-Plugin 'mkitt/tabline.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'gioele/vim-autoswap'
-Plugin 'keith/swift.vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'shmup/vim-sql-syntax'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/BufOnly.vim'
-Plugin 'tpope/vim-dotenv'
-Plugin 'prettier/vim-prettier'
+Plug 'bling/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'gioele/vim-autoswap'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'keith/swift.vim'
+Plug 'mkitt/tabline.vim'
+Plug 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+Plug 'prettier/vim-prettier'
+Plug 'pangloss/vim-javascript'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'shmup/vim-sql-syntax'
+Plug 'tpope/gem-ctags'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dotenv'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'xolox/vim-misc'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'Yggdroot/indentLine'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()
 
 " Config
 let mapleader=","
 let g:mapleader=","
-let g:ctrlp_switch_buffer = 'Et'
-let g:ctrlp_tabpage_position = 'ac'
-let g:ctrlp_reuse_window = 'nerdtree'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_max_files=0
 let NERDTreeQuitOnOpen = 1
 let g:indentLine_color_term = 239
 let g:indentLine_leadingSpaceChar = '·'
