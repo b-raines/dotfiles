@@ -54,8 +54,9 @@ let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
 let g:easytags_async = 1
 let g:prettier#exec_cmd_async = 1
-let g:prettier#autoformat = 1
+let g:prettier#autoformat_config_present = 1
 let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_files = ['.prettierrc']
 ca Ag Ag!
 set synmaxcol=320
 set wildignore+=*/vendor/*,*/tmp/*,*/public/*,*/certs/*,*.so,*.swp,*.zip
