@@ -70,6 +70,7 @@ source ~/.scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
+export EDITOR="$VISUAL"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -96,6 +97,5 @@ alias migrate="rails db:migrate db:test:prepare"
 alias remigrate="staging backup && development restore_from staging && bin/rails db:migrate db:test:prepare"
 alias remigrate_prod="production backup && development restore_from production && bin/rails db:migrate db:test:prepare"
 alias ctags="`brew --prefix`/bin/ctags"
-alias gcas="git push && gco staging && git fetch && git pull && git merge development && git push && gco master && git pull && git merge staging && git push && gco development"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
-export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
+export FZF_DEFAULT_COMMAND='rg --files'
