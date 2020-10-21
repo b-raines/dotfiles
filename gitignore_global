@@ -54,3 +54,6 @@ tags
 #####
 node_modules/*
 .yarn-integrity
+
+
+.idea

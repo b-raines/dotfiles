@@ -4,7 +4,7 @@ filetype off                  " required
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  au VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin()
@@ -54,7 +54,9 @@ let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
 let g:easytags_async = 1
-let g:prettier#exec_cmd_async = 1
+let g:prettier#config#parser = 'babylon'
+" let g:prettier#exec_cmd_async = 1
+let g:prettier#autoformat = 1
 let g:prettier#autoformat_config_present = 1
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#autoformat_config_files = ['.prettierrc']
@@ -149,10 +151,13 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.rb :call DeleteTrailingWS()
-autocmd BufWrite *.js :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+au BufWrite *.py :call DeleteTrailingWS()
+au BufWrite *.rb :call DeleteTrailingWS()
+au BufWrite *.js :call DeleteTrailingWS()
+au BufWrite *.coffee :call DeleteTrailingWS()
+au BufRead,BufNewFile *.html.erb set filetype=eruby.html
+au BufRead,BufNewFile *.html.arb set filetype=ruby
+au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile Fastfile set filetype=ruby
 au BufRead,BufNewFile Matchfile set filetype=ruby
@@ -161,15 +166,15 @@ au BufRead,BufNewFile Gymfile set filetype=ruby
 au BufRead,BufNewFile Deliverfile set filetype=ruby
 au BufRead,BufNewFile Appfile set filetype=ruby
 
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype gitcommit setlocal wrap linebreak nolist spell textwidth=72
+au Filetype html setlocal ts=2 sts=2 sw=2
+au Filetype liquid setlocal ts=2 sts=2 sw=2
+au Filetype ruby setlocal ts=2 sts=2 sw=2
+au Filetype eruby setlocal ts=2 sts=2 sw=2
+au Filetype javascript setlocal ts=2 sts=2 sw=2
+au Filetype gitcommit setlocal wrap linebreak nolist spell textwidth=72
 
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+au! User GoyoEnter Limelight
+au! User GoyoLeave Limelight!
 
 nnoremap j gj
 nnoremap k gk
