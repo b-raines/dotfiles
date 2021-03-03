@@ -9,6 +9,7 @@ endif
 
 call plug#begin()
 
+Plug 'tpope/vim-abolish'
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'gioele/vim-autoswap'
@@ -157,6 +158,7 @@ au BufWrite *.js :call DeleteTrailingWS()
 au BufWrite *.coffee :call DeleteTrailingWS()
 au BufRead,BufNewFile *.html.erb set filetype=eruby.html
 au BufRead,BufNewFile *.html.arb set filetype=ruby
+au BufRead,BufNewFile *.svelte set filetype=html
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile Fastfile set filetype=ruby

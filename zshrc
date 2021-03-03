@@ -60,6 +60,7 @@ export PATH="/Users/brent/anaconda/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
