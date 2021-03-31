@@ -101,3 +101,6 @@ alias remigrate_prod="production backup && development restore_from production &
 alias ctags="`brew --prefix`/bin/ctags"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files'
+
+export PATH="/usr/local/opt/krb5/bin:$PATH"
+export PATH="/usr/local/opt/krb5/sbin:$PATH"
