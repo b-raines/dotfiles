@@ -33,5 +33,7 @@ set viminfo^=%
 set wrap linebreak nolist
 set wrapmargin=0
 set relativenumber
+set visualbell
+set noerrorbells
 
 map <leader>gb :Gblame<cr>
