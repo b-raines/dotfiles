@@ -3,7 +3,7 @@ filetype off                  " required
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   au VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -23,7 +23,7 @@ Plug 'mkitt/tabline.vim'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'prettier/vim-prettier'
-Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -43,6 +43,9 @@ Plug 'vim-scripts/BufOnly.vim'
 Plug 'xolox/vim-misc'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
+Plug 'evanleck/vim-svelte'
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
@@ -50,6 +53,11 @@ call plug#end()
 let mapleader=","
 let g:mapleader=","
 let NERDTreeQuitOnOpen = 1
+let g:syntastic_svelte_checkers = ['javascript/eslint', 'html/htmlhint']
+let g:svelte_preprocessor_tags = [
+      \ { 'name': 'ts', 'tag': 'script', 'as': 'typescript' }
+      \ ]
+let g:svelte_preprocessors = ['ts', 'typescript']
 let g:indentLine_color_term = 239
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
@@ -63,24 +71,24 @@ let g:prettier#autoformat_require_pragma = 0
 let g:prettier#autoformat_config_files = ['.prettierrc']
 let g:rails_projections = {
       \  "app/controllers/*_controller.rb": {
-      \      "test": [
-      \        "spec/requests/{}_spec.rb",
-      \        "spec/controllers/{}_controller_spec.rb",
-      \        "test/controllers/{}_controller_test.rb"
-      \      ],
-      \      "alternate": [
-      \        "spec/requests/{}_spec.rb",
-      \        "spec/controllers/{}_controller_spec.rb",
-      \        "test/controllers/{}_controller_test.rb"
-      \      ],
-      \   },
-      \   "spec/requests/*_spec.rb": {
-      \      "command": "request",
-      \      "alternate": "app/controllers/{}_controller.rb",
-      \      "template": "require 'rails_helper'\n\n" .
-      \        "RSpec.describe '{}' do\nend",
-      \   },
-      \ }
+        \      "test": [
+          \        "spec/requests/{}_spec.rb",
+          \        "spec/controllers/{}_controller_spec.rb",
+          \        "test/controllers/{}_controller_test.rb"
+          \      ],
+          \      "alternate": [
+            \        "spec/requests/{}_spec.rb",
+            \        "spec/controllers/{}_controller_spec.rb",
+            \        "test/controllers/{}_controller_test.rb"
+            \      ],
+            \   },
+            \   "spec/requests/*_spec.rb": {
+              \      "command": "request",
+              \      "alternate": "app/controllers/{}_controller.rb",
+              \      "template": "require 'rails_helper'\n\n" .
+              \        "RSpec.describe '{}' do\nend",
+              \   },
+              \ }
 ca Ag Ag!
 set synmaxcol=320
 set wildignore+=*/vendor/*,*/tmp/*,*/public/*,*/certs/*,*.so,*.swp,*.zip
@@ -158,7 +166,6 @@ au BufWrite *.js :call DeleteTrailingWS()
 au BufWrite *.coffee :call DeleteTrailingWS()
 au BufRead,BufNewFile *.html.erb set filetype=eruby.html
 au BufRead,BufNewFile *.html.arb set filetype=ruby
-au BufRead,BufNewFile *.svelte set filetype=html
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile Fastfile set filetype=ruby

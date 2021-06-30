@@ -17,6 +17,8 @@ set wrap
 set wrapscan
 set gdefault
 
+set surround
+set commentary
 set hidden
 set hlsearch
 set ignorecase
@@ -31,3 +33,5 @@ set viminfo^=%
 set wrap linebreak nolist
 set wrapmargin=0
 set relativenumber
+
+map <leader>gb :Gblame<cr>

@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git ruby rails heroku brew bundler gem rvm web-search zeus)
+plugins=(vi-mode git ruby rails heroku brew bundler gem rvm)
 
 # User configuration
 
@@ -103,4 +103,4 @@ export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files'
 
 export PATH="/usr/local/opt/krb5/bin:$PATH"
-export PATH="/usr/local/opt/krb5/sbin:$PATH"
+. $HOME/.asdf/asdf.sh
