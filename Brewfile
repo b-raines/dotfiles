@@ -59,7 +59,6 @@ tap "homebrew/cask"
 cask_args appdir: "/Applications"
 cask "adoptopenjdk"
 cask "appcleaner"
-cask "alfred"
 cask "bartender"
 cask "fork"
 cask "hazel"
@@ -70,7 +69,6 @@ cask "qlimagesize"
 cask "qlmarkdown"
 cask "qlvideo"
 
-mas "Irvue", id: 1039633667
 mas "1Password7", id: 1333542190
 mas "Magnet", id: 441258766
 mas "Pixelmator", id: 407963104
