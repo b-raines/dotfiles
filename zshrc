@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/brent/.oh-my-zsh
+export ZSH=/Users/brentraines/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git ruby rails heroku brew bundler gem rvm)
+plugins=(asdf vi-mode git ruby rails heroku brew bundler gem rvm)
 
 # User configuration
 
@@ -57,15 +57,14 @@ export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="/Users/brent/Library/Python/2.7/bin:$PATH"
 export PATH="/Users/brent/anaconda/bin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+export ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
-source ~/.scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -104,5 +103,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files'
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 export PATH="/usr/local/opt/krb5/bin:$PATH"
-. $HOME/.asdf/asdf.sh
