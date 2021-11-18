@@ -100,6 +100,7 @@ alias migrate="rails db:migrate db:test:prepare"
 alias remigrate="staging backup && development restore_from staging && bin/rails db:migrate db:test:prepare"
 alias remigrate_prod="production backup && development restore_from production && bin/rails db:migrate db:test:prepare"
 alias ctags="`brew --prefix`/bin/ctags"
+alias eztilt="/Users/brentraines/Code/eztilt/eztilt"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files'
 
