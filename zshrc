@@ -49,7 +49,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(asdf vi-mode git ruby rails heroku brew bundler gem rvm)
+autoload -U +X bashcompinit && bashcompinit
+plugins=(asdf vi-mode git ruby rails heroku brew bundler gem)
 
 # User configuration
 
