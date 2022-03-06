@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/brentraines/.oh-my-zsh
+export ZSH=/Users/brent/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -56,11 +56,12 @@ plugins=(asdf vi-mode git ruby rails heroku brew bundler gem)
 
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH="/Users/brent/Library/Python/2.7/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/Users/brent/anaconda/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
+export PATH="$PATH:$(yarn global bin)"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
