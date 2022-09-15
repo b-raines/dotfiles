@@ -57,11 +57,14 @@ plugins=(asdf vi-mode git ruby rails heroku brew bundler gem)
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# export PATH="/Users/brentraines/Library/Python/2.7/bin:$PATH"
 export PATH="/Users/brent/anaconda/bin:$PATH"
+# export PATH="/Users/brentraines/anaconda/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH="$PATH:$(yarn global bin)"
+export PATH=$PATH:$(go env GOPATH)/bin
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -88,6 +91,7 @@ export EDITOR="$VISUAL"
 
 eval "$(hub alias -s)"
 
+alias rra="bundle exec rubocop -a --force-exclusion $(git diff --diff-filter=d --name-only origin/main)"
 alias paperspace="ssh paperspace@es-dev.precisionnutrition.com"
 alias tunnel="ngrok http --region=us --hostname=mydev.website 7000"
 alias avd="cd $ANDROID_SDK_ROOT/tools &&  emulator @Nexus_5X_API_23"
@@ -102,7 +106,9 @@ alias migrate="rails db:migrate db:test:prepare"
 alias remigrate="staging backup && development restore_from staging && bin/rails db:migrate db:test:prepare"
 alias remigrate_prod="production backup && development restore_from production && bin/rails db:migrate db:test:prepare"
 alias ctags="`brew --prefix`/bin/ctags"
+alias dev1_deploy="git commit --allow-empty -m '[deploy dev1]' && git push"
 alias eztilt="/Users/brentraines/Code/eztilt/eztilt"
+alias run="/Users/brentraines/Code/eztilt/run"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files'
 
