@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/brent/.oh-my-zsh
 
@@ -5,7 +12,7 @@ export ZSH=/Users/brent/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,10 +63,10 @@ plugins=(asdf vi-mode git ruby rails heroku brew bundler gem)
 
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# export PATH="/Users/brent/anaconda/bin:$PATH"
 # export PATH="/Users/brentraines/Library/Python/2.7/bin:$PATH"
-export PATH="/Users/brent/anaconda/bin:$PATH"
-# export PATH="/Users/brentraines/anaconda/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/Users/brentraines/anaconda/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
@@ -112,6 +119,13 @@ alias run="/Users/brentraines/Code/eztilt/run"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files'
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/usr/local/opt/krb5/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

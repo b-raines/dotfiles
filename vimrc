@@ -16,8 +16,6 @@ Plug 'gioele/vim-autoswap'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'keith/swift.vim'
 Plug 'mkitt/tabline.vim'
 Plug 'mxw/vim-jsx'
@@ -48,6 +46,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'evanleck/vim-svelte'
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -65,7 +64,12 @@ let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
 let g:easytags_async = 1
+<<<<<<< HEAD
 " let g:prettier#config#parser = 'babylon'
+=======
+let g:ycm_clangd_binary_path='/opt/homebrew/opt/llvm/bin/clangd'
+let g:prettier#config#parser = 'babylon'
+>>>>>>> 8f15b96 (Updates for terminal colors)
 " let g:prettier#exec_cmd_async = 1
 " let g:prettier#autoformat = 1
 " let g:prettier#autoformat_config_present = 1
@@ -115,20 +119,14 @@ set wrapmargin=0
 set relativenumber
 syntax enable
 
-" Color scheme
-colorscheme desert
-let g:colors_name="desert"
-hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
+autocmd vimenter * ++nested colorscheme gruvbox
 
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-
-" Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
+" let g:solarized_termcolors=16
+" set t_Co=16
+" set termguicolors
+" let g:solarized_termtrans = 1
+" set background=dark
+" colorscheme gruvbox
 
 " Mappings
 map <C-n> :NERDTreeFind<CR>
@@ -183,9 +181,6 @@ au Filetype ruby setlocal ts=2 sts=2 sw=2
 au Filetype eruby setlocal ts=2 sts=2 sw=2
 au Filetype javascript setlocal ts=2 sts=2 sw=2
 au Filetype gitcommit setlocal wrap linebreak nolist spell textwidth=72
-
-au! User GoyoEnter Limelight
-au! User GoyoLeave Limelight!
 
 nnoremap j gj
 nnoremap k gk
