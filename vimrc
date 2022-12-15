@@ -64,12 +64,8 @@ let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_tty_dark = 1
 let g:easytags_async = 1
-<<<<<<< HEAD
-" let g:prettier#config#parser = 'babylon'
-=======
 let g:ycm_clangd_binary_path='/opt/homebrew/opt/llvm/bin/clangd'
 let g:prettier#config#parser = 'babylon'
->>>>>>> 8f15b96 (Updates for terminal colors)
 " let g:prettier#exec_cmd_async = 1
 " let g:prettier#autoformat = 1
 " let g:prettier#autoformat_config_present = 1
