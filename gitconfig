@@ -1,5 +1,5 @@
 [user]
-	name = Brent
+	name = b-raines
 	email = bt.raines@gmail.com
 [credential]
 	helper = osxkeychain
@@ -7,7 +7,7 @@
 [push]
 	default = upstream
 [core]
-	editor = /usr/local/bin/vim
+	editor = vim
 	excludesfile = /Users/brent/.gitignore_global
 [filter "lfs"]
 	required = true
@@ -16,3 +16,5 @@
 	process = git-lfs filter-process
 [ "env"]
 	local = /Users/brent/.gitignore_global
+[init]
+	defaultBranch = main

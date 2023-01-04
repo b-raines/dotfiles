@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/brent/.oh-my-zsh
+export ZSH=/Users/brentraines/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,8 +56,7 @@ plugins=(asdf vi-mode git ruby rails heroku brew bundler gem)
 
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/Users/brent/anaconda/bin:$PATH"
+export PATH="/Users/brentraines/anaconda/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
@@ -81,13 +80,6 @@ export EDITOR="$VISUAL"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-eval "$(hub alias -s)"
-
 alias paperspace="ssh paperspace@es-dev.precisionnutrition.com"
 alias tunnel="ngrok http --region=us --hostname=mydev.website 7000"
 alias avd="cd $ANDROID_SDK_ROOT/tools &&  emulator @Nexus_5X_API_23"
@@ -103,9 +95,21 @@ alias remigrate="staging backup && development restore_from staging && bin/rails
 alias remigrate_prod="production backup && development restore_from production && bin/rails db:migrate db:test:prepare"
 alias ctags="`brew --prefix`/bin/ctags"
 alias eztilt="/Users/brentraines/Code/eztilt/eztilt"
+alias aseprite="/Applications/Aseprite.app/Contents/MacOS/aseprite"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files'
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 export PATH="/usr/local/opt/krb5/bin:$PATH"
+
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
+
+export PATH="$PATH:/Users/brentraines/.foundry/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
