@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/brentraines/.oh-my-zsh
 
@@ -98,7 +91,7 @@ export EDITOR="$VISUAL"
 
 eval "$(hub alias -s)"
 
-alias rra="bundle exec rubocop -a --force-exclusion $(git diff --diff-filter=d --name-only origin/main)"
+alias rra="bundle exec rubocop -A --force-exclusion $(git diff --diff-filter=d --name-only origin/main)"
 alias paperspace="ssh paperspace@es-dev.precisionnutrition.com"
 alias tunnel="ngrok http --region=us --hostname=mydev.website 7000"
 # alias avd="cd $ANDROID_SDK_ROOT/tools &&  emulator @Nexus_5X_API_23"
@@ -125,5 +118,12 @@ eval "$(pyenv init -)"
 
 # export PATH="/usr/local/opt/krb5/bin:$PATH"
 
+# Use asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

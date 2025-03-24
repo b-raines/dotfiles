@@ -7,7 +7,7 @@
 [push]
 	default = upstream
 [core]
-	editor = /usr/local/bin/vim
+	editor = vim
 	excludesfile = /Users/brentraines/.gitignore_global
 [filter "lfs"]
 	required = true
@@ -15,4 +15,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [ "env"]
-	local = /Users/brent/.gitignore_global
+	local = /Users/brentraines/.gitignore_global
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

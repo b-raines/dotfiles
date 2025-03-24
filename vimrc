@@ -22,7 +22,13 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'prettier/vim-prettier'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
+" Plug 'mxw/vim-jsx'
+" Plug 'isRuslan/vim-es6'
+Plug 'posva/vim-vue'
+Plug 'mvolkmann/vim-js-arrow-function'
 Plug 'sheerun/vim-polyglot'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
@@ -47,6 +53,7 @@ Plug 'evanleck/vim-svelte'
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'morhetz/gruvbox'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -134,6 +141,7 @@ map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 map <leader>gb :Git blame<cr>
+map <leader>cp :Copilot<cr>
 nnoremap <C-p> :Files<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
