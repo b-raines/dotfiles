@@ -99,7 +99,18 @@ export EDITOR="$VISUAL"
               fi
 
               cd "$MILO_DIR"
-              git worktree add "../$issue_id" && \
+              
+              # Create worktree if it doesn't exist, otherwise just continue
+              if [ ! -d "../$issue_id" ]; then
+                  git worktree add "../$issue_id" || {
+                      echo "Failed to create worktree for $issue_id"
+                      return 1
+                  }
+                  echo "✅ Created worktree for $issue_id"
+              else
+                  echo "⚠️  Worktree $issue_id already exists, continuing..."
+              fi
+              
               cd "../$issue_id" && \
               make install && \
               if [ "$unleashed_flag" = "--unleashed" ]; then
