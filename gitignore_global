@@ -42,7 +42,7 @@ Thumbs.db
 tags
 
 # Local .env #
-.env.local
+# .env.local
 
 # Vim temporary files #
 *.sw?
