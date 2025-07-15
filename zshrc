@@ -86,12 +86,11 @@ export EDITOR="$VISUAL"
       case "$1" in
           start)
               if [ -z "$2" ]; then
-                  echo "Usage: milo start <issue_id> [--unleashed]"
+                  echo "Usage: milo start <issue_id>"
                   return 1
               fi
 
               local issue_id="$2"
-              local unleashed_flag="$3"
 
               if [ ! -d "$MILO_DIR" ]; then
                   echo "Error: Milo directory not found at $MILO_DIR"
@@ -113,11 +112,8 @@ export EDITOR="$VISUAL"
               
               cd "../$issue_id" && \
               make install && \
-              if [ "$unleashed_flag" = "--unleashed" ]; then
-                  claude "/workflow:start $issue_id --unleashed"
-              else
-                  claude "/workflow:start $issue_id"
-              fi
+              bash .claude/scripts/set-model.sh opus && \
+              claude "/workflow:start $issue_id"
               ;;
           go)
               if [ -z "$2" ]; then
@@ -206,13 +202,6 @@ export EDITOR="$VISUAL"
                       if [[ ${#worktree_names[@]} -gt 0 ]]; then
                           _values 'worktrees' "${worktree_names[@]}"
                       fi
-                      ;;
-              esac
-              ;;
-          4)
-              case $words[2] in
-                  start)
-                      _values 'options' '--unleashed[Enable unleashed mode]'
                       ;;
               esac
               ;;
